@@ -14,8 +14,10 @@ const forecast = (latitude,longitude,callback)=>{
             console.log('Location not found', undefined)
         }
         else{
+            console.log(body.current.weather_descriptions[0])
             
-            callback(undefined,body.current.weather_descriptions[0]+'. It is currently '+body.current.temperature +' and chances of precipitation are '+ body.current.precip +' %.')
+            
+            callback(undefined,body.current.weather_descriptions[0]+'. It is currently '+body.current.temperature +'Feels like '+ body.current.feelslike + 'and chances of precipitation are '+ body.current.precip +' %.')
         }
     })
     
